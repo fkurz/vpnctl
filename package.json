@@ -1,7 +1,7 @@
 {
-  "name": "@fkurz/typescript-cliutil-starter",
+  "name": "vpn",
   "version": "1.0.0",
-  "description": "Starter kit to create a CLI utility with TypeScript",
+  "description": "A small VPN connection utility",
   "main": "src/main.ts",
   "scripts": {
     "dev": "ts-node src/main.ts",
@@ -11,21 +11,8 @@
     "package": "pkg dist/main.js --no-bytecode --public-packages '*' --public --target host --output bin/main"
   },
   "bin": {
-    "typescript-cliutil-starter": "bin/main"
+    "vpn": "bin/main"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fkurz/typescript-cliutil-starter.git"
-  },
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org/"
-  },
-  "keyword": [
-    "TypeScript",
-    "command line utility",
-    "starter"
-  ],
   "author": "Friedrich Kurz",
   "license": "ISC",
   "devDependencies": {
@@ -45,6 +32,7 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "commander": "^8.1.0"
+    "commander": "^8.1.0",
+    "yaml": "^1.10.2"
   }
 }
