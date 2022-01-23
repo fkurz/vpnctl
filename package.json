@@ -1,5 +1,5 @@
 {
-  "name": "vpn",
+  "name": "vpnctl",
   "version": "1.0.0",
   "description": "A small VPN connection utility",
   "main": "src/main.ts",
@@ -11,7 +11,7 @@
     "package": "pkg dist/main.js --no-bytecode --public-packages '*' --public --target host --output bin/main"
   },
   "bin": {
-    "vpn": "bin/main"
+    "vpnctl": "bin/main"
   },
   "author": "Friedrich Kurz",
   "license": "ISC",
