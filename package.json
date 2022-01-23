@@ -7,7 +7,7 @@
     "dev": "ts-node src/main.ts",
     "lint": "eslint src --ext .ts --fix",
     "build": "tsc --build",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "package": "pkg dist/main.js --no-bytecode --public-packages '*' --public --target host --output bin/main"
   },
   "bin": {

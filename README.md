@@ -5,7 +5,7 @@
 A small command line tool to automate VPN connections.
 Currently supports CiscoVPN (Anyconnect) and OpenVPN.
 
-## Get started 
+## Get started
 
 Run the following from the root of this project to build, package, and install the tool on your machine
 
@@ -30,7 +30,3 @@ Commands:
   disconnect <name>
   help [command]     display help for command
 ```
-
-
-
-
