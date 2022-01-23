@@ -15,6 +15,7 @@ enum VpnProvider {
 }
 
 export default new Command("disconnect")
+  .alias("d")
   .argument("name")
   .action((name: string) => {
     console.info(`Reading VPN configuration from ${CONFIG_FILE_PATH}...`);
