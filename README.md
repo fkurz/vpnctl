@@ -1,4 +1,4 @@
-# vpn
+# vpnctl
 
 ## About
 
@@ -11,15 +11,15 @@ Run the following from the root of this project to build, package, and install t
 
 ```bash
 npm install
-npm build
-npm package
+npm run build
+npm run package
 npm link .
 ```
 
 Verify that you properly installed the vpn tool.
 
 ```bash
-$ vpn
+$ vpnctl
 Usage: main [options] [command]
 
 Options:
@@ -45,7 +45,7 @@ anyconnect-endpoint:
   host: vpn.someserver.com
   # User name to authenticate with
   username: user-name
-  # Password authenticate with for the given user
+  # Password to authenticate the given user with
   password: password
 openvpn-endpoint:
   # Tells vpnctl to use OpenVPN
