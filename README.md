@@ -79,4 +79,4 @@ openvpn-endpoint:
     -----END PRIVATE KEY-----
 ```
 
-> :information*source: In case of an OpenVpn configuration entry, the \_directives*, _ca_, _cert_, and _key_ properties are used to construct a configuration file which is then piped to the openvpn binary via STDIN (using the `--config /dev/stdin` option). This way, all file parameters passed to openvpn can be conveniently stored in the vpnctl configuration file instead of having to keep track of multiple files.
+> :information_source: In case of an OpenVpn configuration entry, the \_directives*, _ca_, _cert_, and _key_ properties are used to construct a configuration file which is then piped to the openvpn binary via STDIN (using the `--config /dev/stdin` option). This way, all file parameters passed to openvpn can be conveniently stored in the vpnctl configuration file instead of having to keep track of multiple files.
