@@ -7,7 +7,8 @@ Currently supports CiscoVPN (Anyconnect) and OpenVPN.
 
 ## Get started
 
-Run the following from the root of this project to build, package, and install the tool on your machine
+Run the following from the root of this project to build, package, and install the `vpnctl` tool on 
+your machine
 
 ```bash
 npm install
@@ -15,6 +16,10 @@ npm run build
 npm run package
 npm link .
 ```
+
+> :information_source: The installation procedure is known to not work with newer Node versions. At 
+> time of writing, the highest known version that works is Node v16.20.0. If you encounter problems 
+> during installation, please try downgrading your Node version accordingly. 
 
 Verify that you properly installed the vpn tool.
 
