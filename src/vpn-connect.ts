@@ -40,10 +40,12 @@ export default new Command("connect")
 
     switch (provider) {
       case VpnProvider.CISCO_VPN: {
+
         const ciscoVpnConfiguration: CiscoVpnConnectConfiguration = {
           host: configurationByName.host,
           username: configurationByName.username,
           password: configurationByName.password,
+          binaryPath: configurationByName.binaryPath
         };
         vpnConnectCisco(ciscoVpnConfiguration);
         return;

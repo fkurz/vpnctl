@@ -52,6 +52,11 @@ anyconnect-endpoint:
   username: user-name
   # Password to authenticate the given user with
   password: password
+  # Binary path (optional).
+  # Newer versions of AnyConnect binary changed the location (e.g. "/opt/cisco/secureclient/bin/vpn" on macOS).
+  # To keep backwards compatibility with older versions of AnyConnect, override the binary location here.
+  binaryPath: /some/path
+
 openvpn-endpoint:
   # Tells vpnctl to use OpenVPN
   provider: openvpn

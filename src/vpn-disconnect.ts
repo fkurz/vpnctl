@@ -41,6 +41,7 @@ export default new Command("disconnect")
       case VpnProvider.CISCO_VPN: {
         const ciscoVpnConfiguration: CiscoVpnDisconnectConfiguration = {
           host: configurationByName.host,
+          binaryPath: configurationByName.binaryPath,
         };
         vpnDisconnectCisco(ciscoVpnConfiguration);
         return;

@@ -6,14 +6,16 @@ export interface CiscoVpnConnectConfiguration {
   host: string;
   username: string;
   password: string;
+  binaryPath: string
 }
 
-const ciscoAnyConnectBinaryPath = "/opt/cisco/anyconnect/bin/vpn";
+const defaultCiscoAnyConnectBinaryPath = "/opt/cisco/secureclient/bin/vpn";
 
 export default ({
   host,
   username,
   password,
+  binaryPath = defaultCiscoAnyConnectBinaryPath
 }: CiscoVpnConnectConfiguration): void => {
   const commandOptions = ["-s", "connect", host];
   // A trailing line break seems to be necessary so that the Cisco AnyConnect binary will
@@ -21,7 +23,7 @@ export default ({
   // The variable is called "responseFile" as per the naming in the Cisco AnyConnect client.
   const responseFile = `${username}\n${password}\n`;
   const ciscoAnyconnectConnectProcess = spawn(
-    ciscoAnyConnectBinaryPath,
+    binaryPath,
     commandOptions
   );
   ciscoAnyconnectConnectProcess.stdin.write(responseFile);
@@ -30,7 +32,7 @@ export default ({
 
   // Disconnect when receiving the SIGINT signal (CTRL + C)
   on("SIGINT", () => {
-    vpnDisconnect({ host });
+    vpnDisconnect({ host, binaryPath: binaryPath });
     exit(0);
   });
 
