@@ -85,3 +85,31 @@ openvpn-endpoint:
 ```
 
 > :information_source: In case of an OpenVpn configuration entry, the \_directives*, _ca_, _cert_, and _key_ properties are used to construct a configuration file which is then piped to the openvpn binary via STDIN (using the `--config /dev/stdin` option). This way, all file parameters passed to openvpn can be conveniently stored in the vpnctl configuration file instead of having to keep track of multiple files.
+
+## Troubleshooting
+
+### Connect capability is unavailable. Another Cisco Secure Client application acquired it.
+
+The following problem occurs, when the **Cisco Secure Client** application is running and you try to start a VPN session with `vpnctl`.
+
+```shell
+$ vpnctl connect endpoint-name
+Reading VPN configuration from /Users/main/.config/vpn.config.yml...
+Successfully read configuration!
+Cisco Secure Client (version 5.0.02075) .
+
+Copyright (c) 2004 - 2023 Cisco Systems, Inc.  All Rights Reserved.
+
+
+  >> state: Unknown
+  >> state: Disconnected
+  >> state: Disconnected
+  >> notice: Ready to connect.
+  >> registered with local VPN subsystem.
+  >> contacting host (vpn.someserver.com) for login information...
+  >> state: Disconnected
+  >> error: Connect capability is unavailable. Another Cisco Secure Client application acquired it. Terminating the other application and restarting this application may resolve this issue. Otherwise, contact your system administrator.
+VPN>
+```
+
+**Solution**: Close the **Cisco Secure Client** application.
